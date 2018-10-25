@@ -1,0 +1,20 @@
+<head>
+  <style>
+  button{
+    margin:10px;
+  }
+  </style>
+</head>
+<body>
+<button [routerLink] ="['/home']">Home</button>
+<h4>Edit Authors:</h4>
+{{singleAuthor.Author}}
+<form (submit)="updateAuthor()">
+  <label>Name:</label>
+  <input type="text" value ={{singleAuthorVariable.Author}} name="name" [(ngModel)]="singleAuthorVariable.Author">{{message.Author.message}}<br><br>
+  <label>Quote:</label>
+  <input type ="text" value ={{singleAuthorVariable.Quote}} name = "quote" [(ngModel)]="singleAuthorVariable.Quote">{{message.Quote.message}}<br><br>
+  <button [routerLink]="['/home']">Cancel</button>
+  <button type="submit">Submit</button>
+</form>
+</body>
